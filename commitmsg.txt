@@ -1,1 +1,0 @@
-Initial portfolio release: modular site with branding and security hardening.

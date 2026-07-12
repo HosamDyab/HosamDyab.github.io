@@ -1,4 +1,4 @@
-# Hosam Dyab — Security Portfolio
+# Hosam Dyab - Security Portfolio
 
 [![Live Site](https://img.shields.io/badge/Live-hosamdyab.github.io-2f5edb?style=for-the-badge)](https://hosamdyab.github.io)
 [![eJPT](https://img.shields.io/badge/Certified-eJPT-f2c14e?style=for-the-badge)](https://ine.com)
@@ -17,7 +17,7 @@ Personal portfolio for **Hosam Dyab**, Junior Penetration Tester and aspiring Se
 | **Role** | Junior Penetration Tester → Security Engineer |
 | **Certification** | eJPT (INE) |
 | **Education** | B.Sc. Computer Science, MTI (Excellent, top-5 class) |
-| **Location** | Cairo, Egypt — open to remote & freelance |
+| **Location** | Cairo, Egypt - open to remote & freelance |
 | **Email** | [dyabhosamm@gmail.com](mailto:dyabhosamm@gmail.com) |
 | **LinkedIn** | [linkedin.com/in/hosamdyab](https://www.linkedin.com/in/hosamdyab) |
 | **GitHub** | [github.com/HosamDyab](https://github.com/HosamDyab) |
@@ -59,7 +59,7 @@ HosamDyab.github.io/
 | `index.html` | Structure, content, accessibility landmarks |
 | `css/main.css` | Visual design, layout, motion, breakpoints |
 | `js/main.js` | Progressive enhancement (typing, scroll-spy, mobile nav) |
-| `assets/` | Static media — never embedded as base64 |
+| `assets/` | Static media - never embedded as base64 |
 
 ---
 
@@ -67,7 +67,7 @@ HosamDyab.github.io/
 
 | # | Section | Anchor | File reference |
 |---|---|---|---|
-| — | Hero | `#top` | `index.html` → `<header class="hero">` |
+| - | Hero | `#top` | `index.html` → `<header class="hero">` |
 | 01 | Executive Summary | `#summary` | `<main id="content">` |
 | 02 | Scope & Certifications | `#certifications` | |
 | 03 | Engagement Log | `#experience` | |
@@ -75,7 +75,7 @@ HosamDyab.github.io/
 | 05 | Additional Engagements | `#projects` | |
 | 06 | Toolkit | `#toolkit` | |
 | 07 | Credentials & Education | `#education` | |
-| — | Contact | `#contact` | `<footer id="contact">` |
+| - | Contact | `#contact` | `<footer id="contact">` |
 
 ---
 
@@ -84,7 +84,7 @@ HosamDyab.github.io/
 | Layer | Choice |
 |---|---|
 | Markup | Semantic HTML5 (`<main>`, `<nav>`, `<section>`, `<footer>`) |
-| Styling | Vanilla CSS — custom properties, Grid, Flexbox |
+| Styling | Vanilla CSS - custom properties, Grid, Flexbox |
 | Scripting | Vanilla JavaScript (no frameworks, `defer` load) |
 | Icons | External SVG sprite (`assets/icons.svg`) |
 | Fonts | Space Grotesk, IBM Plex Sans / Mono (Google Fonts) |
@@ -105,7 +105,7 @@ python -m http.server 8080
 npx serve .
 ```
 
-Open [http://localhost:8080](http://localhost:8080) and edit files directly — refresh to see changes.
+Open [http://localhost:8080](http://localhost:8080) and edit files directly - refresh to see changes.
 
 ---
 
@@ -140,8 +140,8 @@ Open [http://localhost:8080](http://localhost:8080) and edit files directly — 
 
 The isometric **H** mark lives in `assets/brand/`:
 
-- **PNG** — favicon, navigation, footer, hero watermark  
-- **SVG** — scalable use in docs, print, or future pages  
+- **PNG** - favicon, navigation, footer, hero watermark  
+- **SVG** - scalable use in docs, print, or future pages  
 
 Icons are centralized in `assets/icons.svg` and referenced as:
 
@@ -167,4 +167,4 @@ Icons are centralized in `assets/icons.svg` and referenced as:
 
 ---
 
-*Built with intent — not a template.*
+*Built with intent - not a template.*
