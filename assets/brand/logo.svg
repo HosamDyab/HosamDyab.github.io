@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <title>Hosam Dyab Logo</title>
+  <!-- Isometric H mark  left pillar -->
+  <path d="M14 8 L14 56 M14 8 L8 8 L8 20 L14 20" stroke="currentColor" stroke-width="4.5" stroke-linejoin="miter" stroke-linecap="square"/>
+  <!-- Right pillar -->
+  <path d="M50 8 L50 56 M50 56 L56 56 L56 44 L50 44" stroke="currentColor" stroke-width="4.5" stroke-linejoin="miter" stroke-linecap="square"/>
+  <!-- Diagonal bridge -->
+  <path d="M18 38 L46 26 M18 44 L46 32" stroke="currentColor" stroke-width="4.5" stroke-linecap="square"/>
+</svg>

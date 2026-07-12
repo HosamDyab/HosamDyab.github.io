@@ -1,0 +1,13 @@
+# OS & editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Build / temp
+*.bak
+_restructure.py
+__pycache__/
