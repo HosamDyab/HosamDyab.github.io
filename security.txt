@@ -4,5 +4,5 @@ Preferred-Languages: en, ar
 Canonical: https://hosamdyab.github.io/.well-known/security.txt
 Policy: https://hosamdyab.github.io/
 
-# Hosam Dyab — security contact for this portfolio site.
+# Hosam Dyab - security contact for this portfolio site.
 # Report misconfigurations, exposed data, or abuse related to hosamdyab.github.io.

@@ -113,7 +113,7 @@ Open [http://localhost:8080](http://localhost:8080) and edit files directly - re
 
 1. Push all files to the `main` branch of `HosamDyab/HosamDyab.github.io`
 2. **Settings → Pages** → Source: **Deploy from branch** → `main` / `/ (root)`
-3. Site updates at [https://hosamdyab.github.io](https://hosamdyab.github.io) within ~1–2 minutes
+3. Site updates at [https://hosamdyab.github.io](https://hosamdyab.github.io) within ~1-2 minutes
 
 > All asset paths are relative (`css/`, `js/`, `assets/`), so the site works at the domain root without configuration changes.
 
