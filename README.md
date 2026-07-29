@@ -4,167 +4,171 @@
 [![eJPT](https://img.shields.io/badge/Certified-eJPT-f2c14e?style=for-the-badge)](https://ine.com)
 [![Location](https://img.shields.io/badge/Location-Cairo%2C%20Egypt-8b93a3?style=for-the-badge)](https://www.google.com/maps/place/Cairo)
 
-Personal portfolio for **Hosam Dyab**, Junior Penetration Tester and aspiring Security Engineer. A single-page, security-themed site deployed on GitHub Pages.
+Personal portfolio for **Hosam Dyab**, a Junior Penetration Tester and aspiring Security Engineer. The site is a static GitHub Pages project built with semantic HTML, modular CSS, and modular vanilla JavaScript.
 
-**Live:** [https://hosamdyab.github.io](https://hosamdyab.github.io)
+Live site: [https://hosamdyab.github.io](https://hosamdyab.github.io)
 
----
+## Overview
 
-## About
+This repository contains a single-page portfolio designed to present:
 
-| | |
-|---|---|
-| **Role** | Junior Penetration Tester → Security Engineer |
-| **Certification** | eJPT (INE) |
-| **Education** | B.Sc. Computer Science, MTI (Excellent, top-5 class) |
-| **Location** | Cairo, Egypt - open to remote & freelance |
-| **Email** | [dyabhosamm@gmail.com](mailto:dyabhosamm@gmail.com) |
-| **LinkedIn** | [linkedin.com/in/hosamdyab](https://www.linkedin.com/in/hosamdyab) |
-| **GitHub** | [github.com/HosamDyab](https://github.com/HosamDyab) |
+- Hosam's security profile and certifications
+- practical experience and project work
+- a flagship graduation project case study
+- recruiter-friendly contact and credibility sections
+- polished UI features such as theme switching, command palette, terminal interactions, and animated effects
 
----
+The project stays static on purpose: no framework, no build step, no backend, and easy deployment to GitHub Pages.
 
 ## Project Structure
 
-```
+```text
 HosamDyab.github.io/
-│
-├── index.html                 # Page markup (semantic HTML only)
-├── README.md                  # Project documentation
+├── index.html
+├── README.md
 ├── .gitignore
-│
 ├── css/
-│   └── main.css               # All styles, design tokens, responsive rules
-│
+│   ├── main.css          # Thin CSS entry file using ordered @import rules
+│   ├── base.css          # Tokens, resets, global styles, theme foundations
+│   ├── layout.css        # Navigation, hero, structure, footer, responsive layout
+│   ├── sections.css      # Section-specific styles (summary, services, proof, FAQ, etc.)
+│   ├── motion.css        # Motion styling, hover effects, animation keyframes
+│   └── interactive.css   # Filters, forms, command palette, toasts, interactive UI
 ├── js/
-│   └── main.js                # Interactions: nav, terminal, scroll, animations
-│
+│   ├── core.js           # Shared environment flags (motion, pointer)
+│   ├── motion.js         # Boot, cursor, tilt, reveals, counters, role typing
+│   ├── navigation.js     # Scroll progress, active nav, anchors, mobile menu
+│   ├── ui.js             # Theme, filters, toasts, FAQ, palette, contact UI
+│   ├── particles.js      # Canvas particle background
+│   └── main.js           # Lightweight note pointing to the split files
 └── assets/
     ├── brand/
-    │   ├── logo.png           # Primary brand mark (favicon, nav, footer)
-    │   └── logo.svg           # Vector logo
-    ├── icons.svg              # SVG icon sprite (mail, github, shield, …)
+    ├── files/
     ├── images/
-    │   ├── profile.jpg        # Hero portrait
-    │   ├── flagship-evidence-1.jpg
-    │   └── flagship-evidence-2.jpg
-    └── files/
-        └── hosam-dyab-cv.pdf  # Downloadable CV
+    └── icons.svg
 ```
 
-### Design principles
+## Frontend Architecture
 
-| Layer | Responsibility |
-|---|---|
-| `index.html` | Structure, content, accessibility landmarks |
-| `css/main.css` | Visual design, layout, motion, breakpoints |
-| `js/main.js` | Progressive enhancement (typing, scroll-spy, mobile nav) |
-| `assets/` | Static media - never embedded as base64 |
+### HTML
 
----
+[`index.html`](index.html) remains the only page entrypoint so the site stays fully compatible with static GitHub Pages hosting.
 
-## Site Sections
+### CSS
 
-| # | Section | Anchor | File reference |
-|---|---|---|---|
-| - | Hero | `#top` | `index.html` → `<header class="hero">` |
-| 01 | Executive Summary | `#summary` | `<main id="content">` |
-| 02 | Scope & Certifications | `#certifications` | |
-| 03 | Engagement Log | `#experience` | |
-| 04 | Flagship Engagement | `#flagship` | uses `assets/images/flagship-*.jpg` |
-| 05 | Additional Engagements | `#projects` | |
-| 06 | Toolkit | `#toolkit` | |
-| 07 | Credentials & Education | `#education` | |
-| - | Contact | `#contact` | `<footer id="contact">` |
+The styles are split by responsibility:
 
----
+- [`css/base.css`](css/base.css): design tokens, resets, global defaults, foundational theme values
+- [`css/layout.css`](css/layout.css): page-level structure such as nav, hero shell, footer, wrappers, and responsive layout rules
+- [`css/sections.css`](css/sections.css): section-specific styling for summary, certifications, services, projects, FAQ, and content blocks
+- [`css/motion.css`](css/motion.css): keyframes, hover motion, reveal states, particle/orb behavior, and animation helpers
+- [`css/interactive.css`](css/interactive.css): UI controls like contact forms, filters, command palette, modals, copy buttons, and toasts
+
+[`css/main.css`](css/main.css) now acts as the ordered stylesheet entry file.
+
+### JavaScript
+
+The client-side behavior is also split by feature:
+
+- [`js/core.js`](js/core.js): shared runtime flags such as reduced-motion and pointer capability
+- [`js/motion.js`](js/motion.js): motion-heavy enhancements like boot screen, cursor, magnetic buttons, tilt, reveals, counters, and role/terminal intro effects
+- [`js/navigation.js`](js/navigation.js): scroll progress, scroll spy, back-to-top, smooth anchor navigation, and mobile nav behavior
+- [`js/ui.js`](js/ui.js): themes, command palette, project filters, FAQ accordion, clipboard actions, contact form, and other interactive UI logic
+- [`js/particles.js`](js/particles.js): the animated network particle background
+
+## Main Sections
+
+The page includes these major content areas:
+
+- `#top` - hero
+- `#summary` - executive summary
+- `#services` - how Hosam can help
+- `#certifications` - certifications and credentials
+- `#proof` - recruiter-facing proof points
+- `#experience` - engagement log
+- `#flagship` - flagship ClassTrack case study
+- `#projects` - additional engagements
+- `#toolkit` - skills and tools
+- `#education` - education and leadership
+- `#faq` - hiring FAQ
+- `#contact` - contact hub in the footer
 
 ## Tech Stack
 
-| Layer | Choice |
-|---|---|
-| Markup | Semantic HTML5 (`<main>`, `<nav>`, `<section>`, `<footer>`) |
-| Styling | Vanilla CSS - custom properties, Grid, Flexbox |
-| Scripting | Vanilla JavaScript (no frameworks, `defer` load) |
-| Icons | External SVG sprite (`assets/icons.svg`) |
-| Fonts | Space Grotesk, IBM Plex Sans / Mono (Google Fonts) |
-| Hosting | GitHub Pages (static, root deploy) |
-
----
+- HTML5
+- Vanilla CSS with custom properties, Grid, Flexbox, and responsive breakpoints
+- Vanilla JavaScript loaded with `defer`
+- SVG sprite icons from [`assets/icons.svg`](assets/icons.svg)
+- Google Fonts: Space Grotesk, IBM Plex Sans, IBM Plex Mono
+- GitHub Pages for hosting
 
 ## Local Development
 
-No build step or dependencies required.
+No build process or package installation is required.
 
 ```bash
 git clone https://github.com/HosamDyab/HosamDyab.github.io.git
 cd HosamDyab.github.io
 
-# Serve locally (pick one)
+# Choose one local server
 python -m http.server 8080
 npx serve .
 ```
 
-Open [http://localhost:8080](http://localhost:8080) and edit files directly - refresh to see changes.
+Then open [http://localhost:8080](http://localhost:8080).
 
----
+## Deployment
 
-## Deploy to GitHub Pages
+This project is designed for root deployment on GitHub Pages.
 
-1. Push all files to the `main` branch of `HosamDyab/HosamDyab.github.io`
-2. **Settings → Pages** → Source: **Deploy from branch** → `main` / `/ (root)`
-3. Site updates at [https://hosamdyab.github.io](https://hosamdyab.github.io) within ~1-2 minutes
+1. Push changes to the `main` branch
+2. In GitHub, open **Settings -> Pages**
+3. Use **Deploy from branch**
+4. Select `main` and `/ (root)`
 
-> All asset paths are relative (`css/`, `js/`, `assets/`), so the site works at the domain root without configuration changes.
+Because all paths are relative, the site works without any bundler or path rewrite step.
 
----
+## Customization
 
-## Customization Guide
+Use this guide when updating the portfolio:
 
-| Goal | Edit |
-|---|---|
-| Bio / summary text | `index.html` → `#summary` |
-| Add certification | `index.html` → `#certifications` |
-| Add project | `index.html` → `#projects` or `#flagship` |
-| Colors & spacing | `css/main.css` → `:root` variables |
-| Animations / JS behavior | `js/main.js` |
-| Replace logo | `assets/brand/logo.png` + `logo.svg` |
-| Replace profile photo | `assets/images/profile.jpg` |
-| Update CV | Replace `assets/files/hosam-dyab-cv.pdf` |
-| Add icon | `assets/icons.svg` → new `<symbol id="i-…">` |
-| Contact details | `index.html` → `#contact` + JSON-LD in `<head>` |
-
----
-
-## Brand Assets
-
-The isometric **H** mark lives in `assets/brand/`:
-
-- **PNG** - favicon, navigation, footer, hero watermark  
-- **SVG** - scalable use in docs, print, or future pages  
-
-Icons are centralized in `assets/icons.svg` and referenced as:
-
-```html
-<svg class="icon"><use href="assets/icons.svg#i-mail"/></svg>
-```
-
----
+- Update content sections in [`index.html`](index.html)
+- Change colors, tokens, and theme foundations in [`css/base.css`](css/base.css)
+- Adjust page structure and spacing in [`css/layout.css`](css/layout.css)
+- Edit section-specific visuals in [`css/sections.css`](css/sections.css)
+- Tweak animation feel in [`css/motion.css`](css/motion.css) and [`js/motion.js`](js/motion.js)
+- Update forms, filters, palette, and other UI behavior in [`css/interactive.css`](css/interactive.css) and [`js/ui.js`](js/ui.js)
+- Replace branding assets in [`assets/brand/`](assets/brand/)
+- Replace the hero/profile image in [`assets/images/profile.jpg`](assets/images/profile.jpg)
+- Replace the downloadable CV in [`assets/files/hosam-dyab-cv.pdf`](assets/files/hosam-dyab-cv.pdf)
+- Add or edit SVG icons in [`assets/icons.svg`](assets/icons.svg)
 
 ## Accessibility
 
-- Skip link → `#content` (main landmark)
-- `aria-label` on navigation
-- `prefers-reduced-motion` disables typing & scroll animations
-- Focus-visible outlines on interactive elements
-- Semantic heading hierarchy (`h1` → `h2`)
+The site includes:
 
----
+- a skip link to `#content`
+- semantic landmarks and heading structure
+- `aria-label` support on major navigation areas
+- reduced-motion support for users who prefer less animation
+- visible keyboard focus styles
+- static-first content that still reads without JavaScript
+
+## Brand Assets
+
+The main visual identity lives in [`assets/brand/`](assets/brand/):
+
+- `logo.png` for favicon, navigation, footer, and hero watermark use
+- `logo.svg` for scalable brand use
+
+Icons are centrally defined in [`assets/icons.svg`](assets/icons.svg) and referenced like this:
+
+```html
+<svg class="icon"><use href="assets/icons.svg#i-mail"></use></svg>
+```
 
 ## License
 
-© 2026 Hosam Dyab. Portfolio content and brand assets are personal property.
+© 2026 Hosam Dyab. Portfolio content and brand assets are personal property unless stated otherwise.
 
----
-
-*Built with intent - not a template.*
+Built with intent - not a template.
