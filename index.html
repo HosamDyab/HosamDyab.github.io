@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +45,9 @@
   <span class="orb orb-3"></span>
 </div>
 
+<!-- Network Particle Canvas -->
+<canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+
 <div class="boot" id="boot" aria-hidden="true">
   <div class="boot-inner">
     <img src="assets/brand/logo.png" alt="" class="boot-logo" width="52" height="52">
@@ -69,10 +72,12 @@
   <a href="#top" data-side data-label="Home" aria-label="Home"><span></span></a>
   <a href="#summary" data-side data-label="Summary" aria-label="Summary"><span></span></a>
   <a href="#certifications" data-side data-label="Certs" aria-label="Certifications"><span></span></a>
+  <a href="#services" data-side data-label="Services" aria-label="Services"><span></span></a>
   <a href="#experience" data-side data-label="Experience" aria-label="Experience"><span></span></a>
   <a href="#flagship" data-side data-label="Flagship" aria-label="Flagship project"><span></span></a>
   <a href="#projects" data-side data-label="Projects" aria-label="Projects"><span></span></a>
   <a href="#toolkit" data-side data-label="Toolkit" aria-label="Toolkit"><span></span></a>
+  <a href="#faq" data-side data-label="FAQ" aria-label="Frequently asked questions"><span></span></a>
   <a href="#contact" data-side data-label="Contact" aria-label="Contact"><span></span></a>
 </aside>
 
@@ -96,6 +101,9 @@
     </div>
     <div class="nav-right">
       <a href="#contact" class="btn btn-ghost nav-cta" data-magnetic>Hire me</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme (T)">
+        <svg class="icon" id="themeIcon"><use href="assets/icons.svg#i-sun"/></svg>
+      </button>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <svg class="icon" id="hamburgerIcon"><use href="assets/icons.svg#i-menu"/></svg>
       </button>
@@ -180,6 +188,10 @@
             <span class="term-title">hosam@cairo:~</span>
           </div>
           <div class="term-body" id="termBody"></div>
+          <div class="term-input-line" id="termInputLine" style="display:none;">
+            <span class="term-prompt">$</span>
+            <input type="text" class="term-input" id="termInput" autocomplete="off" spellcheck="false" aria-label="Terminal input">
+          </div>
         </div>
       </div>
     </div>
@@ -213,6 +225,26 @@
 
 <main id="content">
 
+<section class="trust-band" aria-label="Professional proof points">
+  <div class="wrap trust-band-wrap">
+    <div class="trust-item">
+      <span class="trust-k mono">PROFILE</span>
+      <strong>Junior Penetration Tester</strong>
+      <span>Focused on web, API, and practical assessment work</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-k mono">AVAILABILITY</span>
+      <strong>Open to full-time</strong>
+      <span>Egypt, remote, and freelance security engagements</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-k mono">WORK STYLE</span>
+      <strong>Clear reports, practical fixes</strong>
+      <span>Findings written for both technical teams and hiring managers</span>
+    </div>
+  </div>
+</section>
+
 <section id="summary" aria-labelledby="summary-title">
   <div class="wrap reveal">
     <div class="sec-head">
@@ -243,6 +275,50 @@
         <h3>Clear Reporting</h3>
         <p>Strong technical writing - I explain findings, impact, and remediation steps recruiters and teams can act on.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <span class="sec-num mono">02A</span>
+      <div>
+        <h2 class="sec-title">How I Can Help</h2>
+        <p class="sec-sub">What I bring to a team from day one</p>
+      </div>
+    </div>
+    <div class="service-grid stagger">
+      <article class="service-card" data-tilt>
+        <div class="service-icon"><svg class="icon"><use href="assets/icons.svg#i-shield"/></svg></div>
+        <h3>Web &amp; API Testing</h3>
+        <p>Assess common attack surfaces, document weaknesses clearly, and prioritize issues based on business impact.</p>
+        <ul class="service-list">
+          <li>Recon and enumeration</li>
+          <li>Input-validation and auth-flow review</li>
+          <li>Basic remediation guidance</li>
+        </ul>
+      </article>
+      <article class="service-card" data-tilt>
+        <div class="service-icon"><svg class="icon"><use href="assets/icons.svg#i-check"/></svg></div>
+        <h3>Security Reporting</h3>
+        <p>Turn technical findings into concise reports that recruiters, founders, and engineering teams can quickly act on.</p>
+        <ul class="service-list">
+          <li>Risk + impact summaries</li>
+          <li>Reproducible findings writeups</li>
+          <li>Actionable next steps</li>
+        </ul>
+      </article>
+      <article class="service-card" data-tilt>
+        <div class="service-icon"><svg class="icon"><use href="assets/icons.svg#i-arrow"/></svg></div>
+        <h3>Secure-Build Mindset</h3>
+        <p>Bring a builder’s perspective from shipping apps, AI-backed features, and anti-fraud flows, not only finding bugs.</p>
+        <ul class="service-list">
+          <li>JWT/auth awareness</li>
+          <li>Defensive implementation thinking</li>
+          <li>Cross-functional communication</li>
+        </ul>
+      </article>
     </div>
   </div>
 </section>
@@ -295,6 +371,40 @@
         <p class="cert-name">Digital Marketing</p>
         <p class="cert-issuer">Google</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <span class="sec-num mono">02B</span>
+      <div>
+        <h2 class="sec-title">Why Recruiters Shortlist Me</h2>
+        <p class="sec-sub">Fast proof, without reading the whole portfolio</p>
+      </div>
+    </div>
+    <div class="proof-grid stagger">
+      <article class="proof-card" data-tilt>
+        <span class="proof-card-k mono">CERTIFIED</span>
+        <h3>Verified baseline in offensive security</h3>
+        <p>eJPT gives a recognized foundation in practical junior-level penetration testing workflows.</p>
+      </article>
+      <article class="proof-card" data-tilt>
+        <span class="proof-card-k mono">SHIPPED WORK</span>
+        <h3>Built real systems, not only lab exercises</h3>
+        <p>My graduation project shipped anti-fraud and identity-verification features under realistic product constraints.</p>
+      </article>
+      <article class="proof-card" data-tilt>
+        <span class="proof-card-k mono">COMMUNICATION</span>
+        <h3>Can explain risk clearly</h3>
+        <p>I enjoy translating technical findings into business-aware language teams can understand and fix quickly.</p>
+      </article>
+      <article class="proof-card" data-tilt>
+        <span class="proof-card-k mono">LEARNING CURVE</span>
+        <h3>Security-focused growth path already in motion</h3>
+        <p>Actively deepening skills in AD, Windows privilege escalation, Burp Suite, OWASP Top 10, and Docker security.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -417,37 +527,45 @@
       </div>
     </div>
 
-    <div class="proj-grid stagger">
-      <a class="proj-card" href="https://github.com/HosamDyab/Numerical-Analysis-App" target="_blank" rel="noopener noreferrer" data-tilt>
+    <div class="filter-bar" id="projectFilters" role="tablist" aria-label="Filter projects">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-btn" data-filter="security" role="tab" aria-selected="false">Security</button>
+      <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
+      <button class="filter-btn" data-filter="mobile" role="tab" aria-selected="false">Mobile</button>
+      <button class="filter-btn" data-filter="desktop" role="tab" aria-selected="false">Desktop</button>
+    </div>
+
+    <div class="proj-grid stagger" id="projectsGrid">
+      <a class="proj-card" href="https://github.com/HosamDyab/Numerical-Analysis-App" target="_blank" rel="noopener noreferrer" data-tilt data-category="desktop">
         <svg class="icon ext"><use href="assets/icons.svg#i-arrow"/></svg>
         <p class="proj-name">Numerical Analysis Application</p>
         <p class="proj-stack">Python · NumPy · SymPy · Matplotlib · ReportLab · CustomTkinter</p>
         <p class="proj-desc">Desktop app (with Hazem Mohamed, for Dr. Rania Ahmed's course) implementing five root-finding methods and seven linear-system solvers, with convergence-graph visualizations, solution history, and automated PDF report export.</p>
       </a>
-      <a class="proj-card" href="https://github.com/HosamDyab/cryptography-algorithms" target="_blank" rel="noopener noreferrer" data-tilt>
+      <a class="proj-card" href="https://github.com/HosamDyab/cryptography-algorithms" target="_blank" rel="noopener noreferrer" data-tilt data-category="security">
         <svg class="icon ext"><use href="assets/icons.svg#i-arrow"/></svg>
         <p class="proj-name">Classical Cryptography Algorithms</p>
         <p class="proj-stack">Python · zero dependencies</p>
         <p class="proj-desc">Seven classical cryptographic algorithms implemented from scratch: Caesar, Monoalphabetic, Playfair, Polyalphabetic, Row Transposition, Rail Fence, and RC4.</p>
       </a>
-      <a class="proj-card" href="https://github.com/HosamDyab/Hospital-Management-System" target="_blank" rel="noopener noreferrer" data-tilt>
+      <a class="proj-card" href="https://github.com/HosamDyab/Hospital-Management-System" target="_blank" rel="noopener noreferrer" data-tilt data-category="desktop">
         <svg class="icon ext"><use href="assets/icons.svg#i-arrow"/></svg>
         <p class="proj-name">Hospital Management System</p>
         <p class="proj-stack">Python · Tkinter · MySQL · Jan-May 2024</p>
         <p class="proj-desc">Desktop app for patient records, scheduling, billing, and inventory, on a normalized MySQL schema with a Material Design-inspired UI.</p>
       </a>
-      <div class="proj-card" data-tilt>
+      <div class="proj-card" data-tilt data-category="desktop">
         <p class="proj-name">Banking System Simulation</p>
         <p class="proj-stack">C++ · OOP · Oct 2023-May 2024</p>
         <p class="proj-desc">Object-oriented banking simulator with classes for accounts, customers, and transactions: input validation, exception handling, and concurrency-style performance testing.</p>
       </div>
-      <a class="proj-card" href="https://github.com/HosamDyab/Luxury-Hotel" target="_blank" rel="noopener noreferrer" data-tilt>
+      <a class="proj-card" href="https://github.com/HosamDyab/Luxury-Hotel" target="_blank" rel="noopener noreferrer" data-tilt data-category="mobile">
         <svg class="icon ext"><use href="assets/icons.svg#i-arrow"/></svg>
         <p class="proj-name">Luxury Hotel Management App</p>
         <p class="proj-stack">Flutter · Dart</p>
         <p class="proj-desc">Cross-platform hotel management app covering room bookings, secure user authentication, real-time room availability, and booking modifications.</p>
       </a>
-      <a class="proj-card" href="https://github.com/HosamDyab/logic-based-travel-planner-prolog" target="_blank" rel="noopener noreferrer" data-tilt>
+      <a class="proj-card" href="https://github.com/HosamDyab/logic-based-travel-planner-prolog" target="_blank" rel="noopener noreferrer" data-tilt data-category="web">
         <svg class="icon ext"><use href="assets/icons.svg#i-arrow"/></svg>
         <p class="proj-name">Logic-Based Travel Planner</p>
         <p class="proj-stack">Prolog</p>
@@ -540,6 +658,56 @@
   </div>
 </section>
 
+<section id="faq">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <span class="sec-num mono">08</span>
+      <div>
+        <h2 class="sec-title">Hiring FAQ</h2>
+        <p class="sec-sub">Quick answers for recruiters and security leads</p>
+      </div>
+    </div>
+    <div class="faq-list" id="faqList">
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What roles am I targeting right now?</span>
+          <span class="faq-plus" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Junior Penetration Tester, Junior Application Security, and entry-level security engineering roles where I can contribute immediately while continuing to deepen offensive and defensive skills.</p>
+        </div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What makes me different from a typical fresh graduate?</span>
+          <span class="faq-plus" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>I combine security training with shipped software work, strong academic performance, and clear communication. That means I can both identify risk and understand how teams actually implement fixes.</p>
+        </div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Can I work remotely or freelance?</span>
+          <span class="faq-plus" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Yes. I am open to full-time roles in Egypt, remote opportunities, and focused freelance security engagements where clear scope and deliverables are defined.</p>
+        </div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>What should someone review first?</span>
+          <span class="faq-plus" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Start with the flagship ClassTrack case study, then the certifications section, then the additional projects. That combination shows how I think, build, and report.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer id="contact">
@@ -552,25 +720,111 @@
     <p class="report-meta foot-meta"><span class="pulse"></span>END OF REPORT</p>
     <h2 class="contact-title contact-glow">Let's find what others missed.</h2>
     <p class="contact-sub">Open to full-time Junior Penetration Tester roles in Egypt and freelance security engagements, remote or on-site.</p>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+          <span class="form-error" id="err-name">Please enter your name</span>
+        </div>
+        <div class="form-field">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+          <span class="form-error" id="err-email">Please enter a valid email</span>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" rows="4" placeholder="Tell me about the opportunity…" required></textarea>
+        <span class="form-error" id="err-message">Please enter a message</span>
+      </div>
+      <button type="submit" class="btn btn-primary" data-magnetic>
+        <svg class="icon"><use href="assets/icons.svg#i-mail"/></svg>Send Message
+      </button>
+    </form>
+
     <nav class="site-map" aria-label="Site sections">
       <a href="#summary">01 · Summary</a>
+      <a href="#services">02A · Services</a>
       <a href="#certifications">02 · Certifications</a>
+      <a href="#proof">02B · Proof</a>
       <a href="#experience">03 · Engagement Log</a>
       <a href="#flagship">04 · Flagship</a>
       <a href="#projects">05 · Projects</a>
       <a href="#toolkit">06 · Toolkit</a>
       <a href="#education">07 · Education</a>
+      <a href="#faq">08 · FAQ</a>
       <a href="#top">Back to top</a>
     </nav>
     <div class="contact-links">
-      <a href="mailto:dyabhosamm@gmail.com" class="btn btn-primary" data-magnetic><svg class="icon"><use href="assets/icons.svg#i-mail"/></svg>dyabhosamm@gmail.com</a>
-      <a href="tel:+201093601340" class="btn btn-ghost"><svg class="icon"><use href="assets/icons.svg#i-phone"/></svg>+20 109 360 1340</a>
-      <a href="https://www.linkedin.com/in/hosamdyab" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><svg class="icon"><use href="assets/icons.svg#i-linkedin"/></svg>LinkedIn</a>
-      <a href="https://github.com/HosamDyab" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><svg class="icon"><use href="assets/icons.svg#i-github"/></svg>GitHub</a>
+      <div class="contact-links-grid">
+      <div class="contact-links-row contact-card">
+        <a href="mailto:dyabhosamm@gmail.com" class="btn btn-primary" data-magnetic>
+          <svg class="icon"><use href="assets/icons.svg#i-mail"/></svg>dyabhosamm@gmail.com
+        </a>
+        <button type="button" class="btn btn-ghost copy-btn" data-copy="dyabhosamm@gmail.com" aria-label="Copy email address">
+          <svg class="icon"><use href="assets/icons.svg#i-copy"/></svg>Copy
+        </button>
+      </div>
+      <div class="contact-links-row contact-card">
+        <a href="tel:+201093601340" class="btn btn-ghost">
+          <svg class="icon"><use href="assets/icons.svg#i-phone"/></svg>+20 109 360 1340
+        </a>
+        <button type="button" class="btn btn-ghost copy-btn" data-copy="+201093601340" aria-label="Copy phone number">
+          <svg class="icon"><use href="assets/icons.svg#i-copy"/></svg>Copy
+        </button>
+      </div>
+      </div>
+      <div class="contact-socials">
+        <a href="https://www.linkedin.com/in/hosamdyab" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><svg class="icon"><use href="assets/icons.svg#i-linkedin"/></svg>LinkedIn</a>
+        <a href="https://github.com/HosamDyab" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><svg class="icon"><use href="assets/icons.svg#i-github"/></svg>GitHub</a>
+      </div>
     </div>
-    <p class="foot-note">CAIRO, EGYPT · © 2026 HOSAM DYAB · <a href="https://github.com/HosamDyab/HosamDyab.github.io" target="_blank" rel="noopener noreferrer" class="foot-source">View source</a></p>
+    <p class="foot-note">CAIRO, EGYPT · © <span id="year">2026</span> HOSAM DYAB · <a href="https://github.com/HosamDyab/HosamDyab.github.io" target="_blank" rel="noopener noreferrer" class="foot-source">View source</a></p>
   </div>
 </footer>
+
+<!-- Command Palette -->
+<div class="cmd-palette" id="cmdPalette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+  <div class="cmd-backdrop" data-close-modal></div>
+  <div class="cmd-box" role="document">
+    <div class="cmd-input-wrap">
+      <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-search"/></svg>
+      <input type="text" id="cmdInput" placeholder="Type a command or search…" autocomplete="off" aria-label="Command palette input">
+      <kbd class="cmd-kbd">ESC</kbd>
+    </div>
+    <div class="cmd-results" id="cmdResults" role="listbox"></div>
+    <div class="cmd-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+      <span><kbd>↵</kbd> to select</span>
+      <span><kbd>esc</kbd> to close</span>
+    </div>
+  </div>
+</div>
+
+<!-- Keyboard Shortcuts Help -->
+<div class="modal" id="kbdModal" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts" hidden>
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-content">
+    <button class="modal-close" data-close-modal aria-label="Close shortcuts">&times;</button>
+    <h3 class="modal-title">Keyboard Shortcuts</h3>
+    <div class="kbd-grid">
+      <div class="kbd-row"><kbd>?</kbd><span>Show this help</span></div>
+      <div class="kbd-row"><kbd>Ctrl</kbd><kbd>K</kbd><span>Open command palette</span></div>
+      <div class="kbd-row"><kbd>T</kbd><span>Toggle theme</span></div>
+      <div class="kbd-row"><kbd>/</kbd><span>Focus command palette</span></div>
+      <div class="kbd-row"><kbd>Esc</kbd><span>Close modal / palette</span></div>
+      <div class="kbd-row"><kbd>J</kbd><span>Scroll down</span></div>
+      <div class="kbd-row"><kbd>K</kbd><span>Scroll up</span></div>
+      <div class="kbd-row"><kbd>G</kbd><span>Go to top</span></div>
+      <div class="kbd-row"><kbd>Shift</kbd><kbd>G</kbd><span>Go to bottom</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
 
 <button class="to-top" id="toTop" aria-label="Back to top">
   <svg class="icon"><use href="assets/icons.svg#i-chevron-up"/></svg>
